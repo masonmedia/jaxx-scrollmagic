@@ -11,14 +11,24 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
-    <!--google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Raleway:500,700,900" rel="stylesheet">
-    <!--animate.css-->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        body {
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid black;
+/*
+            height: 100vh;
+            width: 100%;
+*/
+        }
+    </style>
 </head>
 
 <body>
@@ -28,12 +38,11 @@
 
     
 
-    <div class="container-fluid bg-1" id="slide01">
+    <div class="container-fluid bg-1 p-0" id="">
         <div class="row">
             <div class="col-sm-12 min-100">
-                <h1>Slide and pin</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus temporibus ipsum repudiandae, laboriosam expedita rerum dignissimos nam officiis, quisquam magni, qui ab voluptate harum eveniet. Sapiente quia ratione accusamus omnis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolor ut unde optio et! Possimus laborum quis delectus incidunt culpa eaque, quasi soluta, error ullam voluptate, ad corporis totam assumenda.</p>
+<!--                <h1>Slide and pin</h1>-->
+                <canvas></canvas>
             </div>
         </div>
     </div>
@@ -45,7 +54,6 @@
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
     </script>
-<!--    scrolmagic-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>

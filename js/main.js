@@ -58,30 +58,29 @@ new ScrollMagic.Scene({
 
 
 
-//entrance animations
+//slide right
 
-//slide left
 
-var fromLeftTimeline = new TimelineMax();
-var fromLeftFrom = TweenMax.from(".left", 1, {
-    x: -500
+var fromTopTimeline = new TimelineMax();
+var fromTopFrom = TweenMax.from(".top", 1, {
+    y: -800
 });
-var fromLeftTo = TweenMax.to(".left", 1, {
-    x: 0
+var fromTopTo = TweenMax.to(".top", 1, {
+    y: 0
 });
-fromLeftTimeline
-    .add(fromLeftFrom)
-    .add(fromLeftTo);
+fromTopTimeline
+    .add(fromTopFrom)
+    .add(fromTopTo);
 
 
 
-//scene 3 slide in left
+//scene slide in right
 
 new ScrollMagic.Scene({
-        triggerElement: "#slidein3",
+        triggerElement: "#slideRight",
         offset: 200,
     })
-    .setTween(fromLeftTimeline)
+    .setTween(fromTopTimeline)
     .duration(400)
     //    .reverse(false)
     //.addIndicators() // add indicators (requires plugin)
@@ -89,36 +88,12 @@ new ScrollMagic.Scene({
 
 
 
-// Fade in
 
-var fadeInTimeline = new TimelineMax();
-var fadeInFrom = TweenMax.from(".opacity", 1, {
-    autoAlpha: 0
-});
-var fadeInTo = TweenMax.to(".opacity", 1, {
-    autoAlpha: 1
-});
-fadeInTimeline
-    .add(fadeInFrom)
-    .add(fadeInTo);
-
-//fade in scene 
-
-new ScrollMagic.Scene({
-        triggerElement: "#slidein3",
-        offset: 200,
-    })
-    .setTween(fadeInTimeline)
-    .duration(400)
-    //    .reverse(false)
-    //.addIndicators() // add indicators (requires plugin)
-    .addTo(controller);
-
-//Fly in from the left - animation
+//Fly in from the bottom - animation
 
 var fromBottomTimeline = new TimelineMax();
 var fromBottomFrom = TweenMax.from(".bottom", 1, {
-    y: 300
+    y: 800
 });
 var fromBottomTo = TweenMax.to(".bottom", 1, {
     y: 0
@@ -130,7 +105,7 @@ fromBottomTimeline
 //scene 
 
 new ScrollMagic.Scene({
-        triggerElement: "#slidein3",
+        triggerElement: "#slideInBottom",
         offset: 200,
     })
     .setTween(fromBottomTimeline)
@@ -160,7 +135,7 @@ $(".stagger-tween").each(function() {
 	    })
 		.setTween(stagger)
 		.addTo(controller)
-    .addIndicators()
+//    .addIndicators()
 		;
 });
 
@@ -199,20 +174,174 @@ var pinScene01 = new ScrollMagic.Scene({
 	    var pinScene02Tl = new TimelineMax();
 
 	    pinScene02Tl
-	    	.to($('#slide02 h1'), 0.2, {autoAlpha: 0, ease:Power1.easeNone}, 1.5)
-	    	.to($('#slide02 section'), 0.2, {autoAlpha: 0, ease:Power1.easeNone}, 1.5)
-	    	.set($('#slide02 h1'), {text: "The Memories"})
-	    	.set($('#slide02 p'), {text: "You never climb the same mountain twice, not even in memory. Memory rebuilds the mountain, changes the weather, retells the jokes, remakes all the moves."})
-	    	.to($('#slide02 .bcg'), 0.6, {scale: 1.2, transformOrigin: '0% 0%', ease:Power0.easeNone})
-	    	.fromTo($('#slide02 h1'), 0.7, {y: '+=20'}, {y: 0, autoAlpha: 1, ease:Power1.easeOut}, '+=0.4')
-	    	.fromTo($('#slide02 section'), 0.6, {y: '+=20'}, {y: 0, autoAlpha: 1, ease:Power1.easeOut}, '-=0.6')
-	    	.set($('#slide02 h1'), {autoAlpha: 1}, '+=2.5');
+	    	.to($('#slide03 h1'), 0.2, {autoAlpha: 0, ease:Power1.easeNone}, 1.5)
+	    	.to($('#slide03 section'), 0.2, {autoAlpha: 0, ease:Power1.easeNone}, 1.5)
+	    	.set($('#slide03 h1'), {text: "The Memories"})
+	    	.set($('#slide03 p'), {text: "You never climb the same mountain twice, not even in memory. Memory rebuilds the mountain, changes the weather, retells the jokes, remakes all the moves."})
+	    	.to($('#slide03 .bcg'), 0.6, {scale: 1.2, transformOrigin: '0% 0%', ease:Power0.easeNone})
+	    	.fromTo($('#slide03 h1'), 0.7, {y: '+=20'}, {y: 0, autoAlpha: 1, ease:Power1.easeOut}, '+=0.4')
+	    	.fromTo($('#slide03 section'), 0.6, {y: '+=20'}, {y: 0, autoAlpha: 1, ease:Power1.easeOut}, '-=0.6')
+	    	.set($('#slide03 h1'), {autoAlpha: 1}, '+=2.5');
 
 	    var pinScene02 = new ScrollMagic.Scene({
-	        triggerElement: '#slide02', 
+	        triggerElement: '#slide03', 
 	        triggerHook: 0,
 	        duration: "300%"
 	    })
-	    .setPin("#slide02")
+	    .setPin("#slide03")
 	    .setTween(pinScene02Tl)
 	    .addTo(controller);
+
+
+
+
+//features page animations
+
+
+
+//left tween - slide2 tweens
+
+var fromLeftTimeline = new TimelineMax();
+var fromLeftFrom = TweenMax.from("#left", 1, {
+    x: -500,
+    opacity: 0
+});
+var fromLeftTo = TweenMax.to("#left", 1, {
+    x: 0,
+    opacity: 1
+});
+fromLeftTimeline
+    .add(fromLeftFrom)
+    .add(fromLeftTo);
+
+//left tween scene
+
+new ScrollMagic.Scene({
+        triggerElement: "#slide2",
+        offset: 200,
+    })
+    .setTween(fromLeftTimeline)
+    .duration(800)
+    //    .reverse(false)
+    //.addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+
+
+//top tween
+
+var fromLeftTimeline = new TimelineMax();
+var fromLeftFrom = TweenMax.from("#top", 1, {
+    y: -500
+});
+var fromLeftTo = TweenMax.to("#top", 1, {
+    y: 0
+});
+fromLeftTimeline
+    .add(fromLeftFrom)
+    .add(fromLeftTo);
+
+//top tween scene
+
+new ScrollMagic.Scene({
+        triggerElement: "#slide2",
+        offset: 200,
+    })
+    .setTween(fromLeftTimeline)
+    .duration(800)
+    //    .reverse(false)
+    //.addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+
+
+
+
+
+
+// ============frideay examples
+
+// Single item fade in and slide up...
+
+$(".single-tween-item").each(function() {
+
+ 	var tween = TweenMax.fromTo(this, .6, {
+	        y: 40,
+	        autoAlpha: 0,
+	        delay: 0,
+	        ease: Power2.easeOut
+	    }, .1);
+
+	var scene1 = new ScrollMagic.Scene({
+	        triggerElement: this,
+	        offset: -100,
+	        reverse:true
+	    })
+		.setTween(tween)
+		.addTo(controller)
+    .addIndicators()
+		;
+});
+
+
+
+
+
+// LH Content fade and slide in from right, RH Content fade and slide up...
+
+$(".content-tween").each(function() {
+  
+  var contentTweenTL = new TimelineMax({
+    repeat:0,
+  });
+  
+  var contentTween = contentTweenTL.from($(this).find(".content-tween-left"), .6, {
+    x: -40,
+    autoAlpha: 0,
+    delay: 0,
+    ease: Power2.easeOut
+  }, .1)
+  .from($(this).find(".content-tween-right"), .6, {
+    y: 40,
+    autoAlpha: 0,
+    delay: 0,
+    ease: Power2.easeOut
+  }, .1);
+
+	var scene3 = new ScrollMagic.Scene({
+	        triggerElement: this,
+	        offset: -100,
+	        reverse:true
+	    })
+		.setTween(contentTween)
+		.addTo(controller)
+    .addIndicators()
+		;
+});
+
+
+
+
+
+//individual tweens on page load
+
+//slide 1
+
+//var fadein_slide_1 = TweenLite.from( '#slide-1', 2, {autoAlpha:0, y: 100} );
+TweenLite.from( '#slide-1', 2, {autoAlpha:0, y: 100} );
+TweenLite.from( '#slide-1 h1', 1, {autoAlpha:0, x: 100} );
+
+
+
+
+
+
+
+//canvas
+
+var canvas = document.querySelector('canvas');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+
+
